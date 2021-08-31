@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename= 'assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+
+
+    <link href="{{url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+
+
+
+    <title>HEALTHCARE| KIDNEY</title>
+</head>
+
+<body>
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="#" class="logo d-flex align-items-center">
+                <img src="{{url_for('static', filename='assets/img/logo.png' )}}" alt="">
+                <span>MEDICAL AI</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link" href="{{ url_for('index')}}">Home</a></li>
+
+                    <li><a class="nav-link" href="{{ url_for('diabetes')}}">Diabetes</a></li>
+                    <li><a class="nav-link" href="{{ url_for('heart')}}">Heart</a></li>
+                    <li><a class="nav-link active" href="{{ url_for('kidney')}}">Kidney</a></li>
+                    <li><a class="nav-link " href="{{ url_for('liver')}}">Liver</a></li>
+
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
+
+        </div>
+    </header>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class=" hero d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up" class="text-primary">We offer ML model for checking your Kidney </h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">A mechine learning model to accuratly predict dieases</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#predict" class="btn-get-started scrollto bg-primary d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>Get Started</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{url_for('static', filename='assets/img/kidney.svg')}}" class="" alt="" height="400px">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End Hero -->
+    <section class="form-icons  bg-light text-center" id="predict" data-aos="zoom-in" data-aos-delay="400">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-12 mx-auto">
+                    <h2>MEDICAL'S DATA</h2>
+                    <p class="h">enter your data here</p>
+                </div>
+                <div class="col-md-12">
+                    <form action="{{ url_for('kidney_predict')}}" method="POST">
+                        <div class="row pt-5">
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <input type="number" placeholder="Age" class="form-control" id="age" name="age" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <input type="number" placeholder="Blood Pressure" class="form-control" id="bp" name="bp" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="al" name="al" aria-label="default select example">
+                                        <option selected disabled>Albumin</option>
+                                        <option value="0.0">0.0</option>
+                                        <option value="1.0">1.0</option>
+                                        <option value="2.0">2.0</option>
+                                        <option value="3.0">3.0</option>
+                                        <option value="4.0">4.0</option>
+                                        <option value="5.0">5.0</option>    
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="su" name="su">
+                                        <option selected disabled>Sugar</option>
+                                        <option value="0.0">0.0</option>
+                                        <option value="1.0">1.0</option>
+                                        <option value="2.0">2.0</option>
+                                        <option value="3.0">3.0</option>
+                                        <option value="4.0">4.0</option>
+                                        <option value="5.0">5.0</option>  
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="pcc" name="pcc">
+                                        <option selected disabled>Pus Cell Clumps </option>
+                                        <option value="1">Present</option>
+                                        <option value="0">Not Present</option>
+                                         
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="ba" name="ba">
+                                        <option selected disabled>Bacteria</option>
+                                        <option value="1">Present</option>
+                                        <option value="0">Not Present</option>
+       
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="Blood Glucose Random" class="form-control" id="bgr" name="bgr" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="Blood Urea" class="form-control" id="bu" name="bu" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="Serum Creatinine" class="form-control" id="sc" name="sc" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="Sodium" class="form-control" id="sod" name="sod" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="Potassium" class="form-control" id="pot" name="pot" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="Haemoglobin" class="form-control" id="hemo" name="hemo" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="Packed Cell Volume" class="form-control" id="pcv" name="pcv" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="White Blood Cell Count" class="form-control" id="wc" name="wc" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="htn" name="htn">
+                                        <option selected disabled>Hypertension</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+       
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="dm" name="dm">
+                                        <option selected disabled>Diabetes Mellitus</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+       
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="cad" name="cad">
+                                        <option selected disabled>Coronary Artery Disease</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+       
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="appet" name="appet">
+                                        <option selected disabled>Appetite</option>
+                                        <option value="1">Good</option>
+                                        <option value="0">Poor</option>
+       
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="pe" name="pe">
+                                        <option selected disabled>Pedal</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+       
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 pt-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/kidney.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="ane" name="ane">
+                                        <option selected disabled>Anemia</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+       
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 pt-5 justify-content-center m-auto">
+                                <button class="btn btn-primary w-100" type="submit">PREDICT</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <br><br>
+
+
+                </div>
+                <div class="col-md-12">
+
+                    {% if kidney_result == 0 %}
+                    <div class="card text-center  h mt-5">
+                        <div class="card-header bg-success h2 text-white">happy to say that..</div>
+                        <div class="card-body">
+                            <p class="h4">Your result is <span class="text-success">nagative</span> for the kidney fialure..</p>
+                        </div>
+                    </div>
+
+                </div>{% endif %} {% if kidney_result == 1 %}
+                <div class="card text-center  h mt-5">
+                    <div class="card-header bg-danger h2 text-white">Sorry to say that..</div>
+                    <div class="card-body">
+                        <p class="h4">Your result is <span class="text-danger">POSSITIVE</span> for the kidney failure..Don't worry contact a doctor soon..</p>
+                    </div>
+                </div> {% endif %}
+            </div>
+
+
+        </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="copyright">
+                MECHINE LEARNING <strong><span> AI</span></strong> MODELS
+            </div>
+            <div class="credits">
+
+                Designed by <a href="https://bootstrapmade.com/">kavitha P</a>
+            </div>
+        </div>
+    </footer>
+    <style>
+        .h {
+            font-family: Comic Sans Ms, Comic Sans, cursive;
+        }
+    </style>
+
+    <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+
+    <script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+    <!--<script src="{{url_for('static', filename='assets/vendor/purecounter/purecounter.js')}}"></script> -->
+    <!--<script src="{{url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script> -->
+    <script src="{{url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+
+
+</body>
+
+</html>

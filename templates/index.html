@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDICAL | AI</title>
+
+    <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename= 'assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+
+
+    <link href="{{url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+
+</head>
+
+
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a href="#" class="logo d-flex align-items-center">
+            <img src="{{url_for('static', filename='assets/img/logo.png' )}}" alt="">
+            <span>MEDICAL AI</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">About</a></li>
+                <li><a class="nav-link scrollto" href="{{ url_for('diabetes')}}">Diabetes</a></li>
+                <li><a class="nav-link scrollto" href="{{ url_for('heart')}}">Heart</a></li>
+                <li><a class="nav-link scrollto" href="{{ url_for('kidney')}}">Kidney</a></li>
+                <li><a href="{{ url_for('liver')}}">Liver</a></li>
+
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+
+    </div>
+</header>
+<!-- End Header -->
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <h1 data-aos="fade-up">We offer ML model for checking your health</h1>
+                <h2 data-aos="fade-up" data-aos-delay="400">A mechine learning model to accuratly predict dieases</h2>
+                <div data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center text-lg-start">
+                        <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                            <span>Get Started</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                <img src="{{url_for('static', filename='assets/img/hero-img-5.svg')}}" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End Hero -->
+
+<main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+
+        <div class="container" data-aos="fade-up">
+            <div class="row gx-0">
+
+                <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="content">
+                        <h3>Who We Are</h3>
+                        <h2>We care about your health.we offer mechine learning based webapp as a medical device</h2>
+                        <p>
+                            Goal of this WEBAPP is to tarin a mechine learning model to accuratly predict whether a sample patient has been diagnosed with diseases with higher accurancy possible
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{url_for('static', filename='assets/img/about-5.jpg')}}" class="img-fluid" alt="">
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <!-- End About Section -->
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>MEDICAL</h2>
+                <p>Check Your Body</p>
+            </header>
+
+            <div class="row gy-4" data-aos="fade-left">
+
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="box">
+                        <h3 class="text-warning">Diabetes</h3>
+
+                        <img src="{{url_for('static',filename='assets/img/sugar-blood-level.svg')}}" class="img-fluid" alt="">
+                        <ul>
+                            <li>Glucose</li>
+                            <li>Blood Pressure</li>
+                            <li>Skin Thinkness</li>
+                            <li>Insulin</li>
+                            <li>BMI and DPF</li>
+                        </ul>
+                        <a href="{{ url_for('diabetes')}}" class="btn-buy">predict Now</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="box">
+
+                        <h3 class="text-danger">Heart Disease</h3>
+
+                        <img src="{{url_for('static',filename='assets/img/heart-rate.svg')}}" class="img-fluid" alt="">
+                        <ul>
+                            <li>Chest Pain Type</li>
+                            <li>Trestbps</li>
+                            <li>choiestoral</li>
+                            <li>Fasting Blood Sugar</li>
+                            <li>Resting ECG </li>
+                        </ul>
+                        <a href="{{ url_for('heart')}}" class="btn-buy">Predict Now</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="box">
+                        <h3 class="text-primary">Kidney Failure</h3>
+
+                        <img src="{{url_for('static',filename='assets/img/kidney.svg')}}" class="img-fluid" alt="">
+                        <ul>
+                            <li>Blood Pressure</li>
+                            <li>Albumin</li>
+                            <li>Sugar</li>
+                            <li>Pus Cell Clumps</li>
+                            <li>Bacteria</li>
+                        </ul>
+                        <a href="{{ url_for('kidney')}}" class="btn-buy">Predict Now</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="box">
+                        <h3 style="color:brown;">Liver disease</h3>
+
+                        <img src="{{url_for('static',filename='assets/img/liver.svg')}}" class="img-fluid" alt="">
+                        <ul>
+                            <li>Alkaline Phosphotase</li>
+                            <li>Alamine Aminotransferase</li>
+                            <li>Aspartate Aminotransferase</li>
+                            <li>Total Protiens </li>
+                            <li>Albumin </li>
+
+                        </ul>
+                        <a href="{{ url_for('liver')}}" class="btn-buy">Predict Now</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- End Pricing Section -->
+
+    <!-- ======= F.A.Q Section ======= -->
+    <!-- ======= Footer ======= -->
+
+
+
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="copyright">
+                MECHINE LEARNING <strong><span> AI</span></strong> MODELS
+            </div>
+            <div class="credits">
+
+                Designed by <a href="https://bootstrapmade.com/">kavitha P</a>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+
+
+</main>
+
+<body>
+    <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+
+    <script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+    <!--<script src="{{url_for('static', filename='assets/vendor/purecounter/purecounter.js')}}"></script> -->
+    <!--<script src="{{url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script> -->
+    <script src="{{url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+</body>
+
+</html>

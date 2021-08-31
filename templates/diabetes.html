@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename= 'assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+
+
+    <link href="{{url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+
+
+    <title>HEALTHCARE| DIABETES</title>
+</head>
+
+<body>
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="#" class="logo d-flex align-items-center">
+                <img src="{{url_for('static', filename='assets/img/logo.png' )}}" alt="">
+                <span>MEDICAL AI</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link" href="{{ url_for('index')}}">Home</a></li>
+
+                    <li><a class="nav-link active" href="{{ url_for('diabetes')}}">Diabetes</a></li>
+                    <li><a class="nav-link" href="{{ url_for('heart')}}">Heart</a></li>
+                    <li><a class="nav-link" href="{{ url_for('kidney')}}">Kidney</a></li>
+                    <li><a class="nav-link " href="{{ url_for('liver')}}">Liver</a></li>
+
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
+
+        </div>
+    </header>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class=" hero d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up" class="text-warning">We offer ML model for checking your diabetes </h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">A mechine learning model to accuratly predict dieases</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#predict" class="btn-get-started  bg-warning scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>Get Started</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{url_for('static', filename='assets/img/sugar-blood-level.svg')}}" class="" alt="" height="400px">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End Hero -->
+    <section id="predict" data-aos="zoom-in" data-aos-delay="400">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto text-center mt-5">
+                    <h2>MEDICAL'S DATA</h2>
+                    <p class="h">enter your data here</p>
+                </div>
+                <div class="col-md-8 m-auto py-5">
+                    <form action="{{ url_for('predict')}}" method="POST">
+                        <div class="row ">
+
+                            <div class="col-md-6 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/sugar-blood-level.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" class="form-control" name="Pregnancies" placeholder="Pregnancies" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/sugar-blood-level.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" class="form-control" name="Glucose" placeholder="Glucose" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/sugar-blood-level.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" class="form-control" name="BloodPressure" placeholder="Blood Pressure" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/sugar-blood-level.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" class="form-control" name="SkinThinkness" placeholder="Skin Thinkness" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/sugar-blood-level.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" class="form-control" name="Insulin" placeholder="Insulin" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/sugar-blood-level.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" class="form-control" name="BMI" placeholder="BMI" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/sugar-blood-level.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" class="form-control" name="DPF" placeholder="Prdigree Functoin" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/sugar-blood-level.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" class="form-control" name="Age" placeholder="Age" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-5 m-auto">
+                                <button type="submit" class="btn w-100  btn-warning text-white">Predict</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                    {% if prediction_text == 0 %}
+                    <div class="card text-center  h mt-5 box">
+                        <div class="card-header bg-success h2 text-white">happy to say that..</div>
+                        <div class="card-body">
+                            <p class="h4">Your result is <span class="text-success">nagative</span> for the diabetes..</p>
+                        </div>
+                    </div>
+
+                </div>{% endif %} {% if prediction_text == 1 %}
+                <div class="card text-center  h mt-5 ">
+                    <div class="card-header bg-danger h2 text-white">Sorry to say that..</div>
+                    <div class="card-body">
+                        <p class="h4">Your result is <span class="text-danger">POSSITIVE</span> for the diabetes..Don't worry contact a doctor soon..</p>
+                    </div>
+                </div> {% endif %}
+
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="copyright">
+                MECHINE LEARNING <strong><span> AI</span></strong> MODELS
+            </div>
+            <div class="credits">
+
+                Designed by <a href="https://bootstrapmade.com/">kavitha P</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <style>
+        .h {
+            font-family: Comic Sans Ms, Comic Sans, cursive;
+        }
+        
+        .input-group-text {
+            border-bottom-right-radius: 0%;
+            border-top-right-radius: 0%;
+        }
+        
+        .form-control {
+            border-top-left-radius: 0%;
+            border-bottom-left-radius: 0%;
+        }
+    </style>
+    <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+
+    <script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+    <!--<script src="{{url_for('static', filename='assets/vendor/purecounter/purecounter.js')}}"></script> -->
+    <!--<script src="{{url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script> -->
+    <script src="{{url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+
+
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+</body>
+
+</html>

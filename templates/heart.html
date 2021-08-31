@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+
+    <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename= 'assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+
+
+    <link href="{{url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+
+
+    <title>HEALTHCARE| HEART</title>
+</head>
+
+<body>
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="#" class="logo d-flex align-items-center">
+                <img src="{{url_for('static', filename='assets/img/logo.png' )}}" alt="">
+                <span>MEDICAL AI</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link" href="{{ url_for('index')}}">Home</a></li>
+
+                    <li><a class="nav-link" href="{{ url_for('diabetes')}}">Diabetes</a></li>
+                    <li><a class="nav-link active" href="{{ url_for('heart')}}">Heart</a></li>
+                    <li><a class="nav-link" href="{{ url_for('kidney')}}">Kidney</a></li>
+                    <li><a class="nav-link " href="{{ url_for('liver')}}">Liver</a></li>
+
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
+
+        </div>
+    </header>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class=" hero d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up" class="text-danger">We offer ML model for checking your Heart </h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">A mechine learning model to accuratly predict dieases</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#prediction" class="btn-get-started bg-danger scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>Get Started</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{url_for('static', filename='assets/img/heart-rate.svg')}}" class="" alt="" height="400px">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End Hero -->
+    <section class="form-icons  bg-light text-center" id="prediction" data-aos="zoom-in" data-aos-delay="400">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-12 mx-auto">
+                    <h2>MEDICAL'S DATA</h2>
+                    <p class="h">enter your data here</p>
+                </div>
+                <div class="col-md-12">
+                    <form action="{{ url_for('predict_heart')}}" method="POST">
+                        <div class="row pt-5">
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <input type="number" placeholder="age" class="form-control" id="age" name="age" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="sex" name="sex" aria-label="default select example" required>
+                                        <option selected disabled>Sex</option>
+                                        <option value="1">Male</option>
+                                        <option value="0">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="cp" name="cp" required>
+                                        <option selected disabled>Chest Pain Type</option>
+                                        <option value="1">Typical Angina</option>
+                                        <option value="2">Atypical Angina</option>
+                                        <option value="3">Non-anginal</option>
+                                        <option value="4">Asytomatic</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="Trestbps [94-200]" class="form-control" id="trestbps" name="trestbps" required>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="choiestoral [126 - 564]" class="form-control" id="chol" name="chol" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="fbs" name="fbs">
+                                        <option selected disabled>Fasting Blood Sugar</option>
+                                        <option value="1"> Greater than 120mg/dl</option>
+                                        <option value="0"> Less than 120mg/dl</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="restecg" name="restecg" required>
+                                        <option selected disabled>Resting ECG Result</option>
+                                        <option value="0">hypertropy</option>
+                                        <option value="1">Normal</option>
+                                        <option value="2">wave abnomality</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="Thalach [71 - 202]" class="form-control" id="thalach" name="thalach" required>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="exang" name="exang">
+                                        <option selected disabled>Exercise-induced Angina</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="ST depression [0,6.2]" class="form-control" id="oldpeak" name="oldpeak" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="Slope of peak [1,3]" class="form-control" id="slope" name="slope" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <input type="text" placeholder="number of major vesseles [0,3]" class="form-control" id="ca" name="ca" required>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3 mt-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <img src="static/images/heart-rate.svg" height="25px"></span>
+                                    </div>
+                                    <select class="form-select" id="thal" name="thal" required>
+                                        <option selected disabled>Thal</option>
+                                        <option value="0">Normal</option>
+                                        <option value="1">Fixed Defect</option>
+                                        <option value="2">Reversible Defect</option>
+                                        
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-3 left">
+                                <button class="btn w-100 btn-md btn-danger" type="submit" value="submit">ANALYZE</button>
+                            </div>
+                        </div>
+                </div>
+                </form>
+
+                <br><br>
+
+               <div class="col-md-12">
+
+                    {% if heart_result == 0 %}
+                    <div class="card text-center  h mt-5">
+                        <div class="card-header bg-success h2 text-white">happy to say that..</div>
+                        <div class="card-body">
+                            <p class="h4">Your result is <span class="text-success">nagative</span> for the heart failure..</p>
+                        </div>
+                    </div>
+
+                </div>{% endif %} {% if heart_result == 1 %}
+                <div class="card text-center  h mt-5">
+                    <div class="card-header bg-danger h2 text-white">Sorry to say that..</div>
+                    <div class="card-body">
+                        <p class="h4">Your result is <span class="text-danger">POSSITIVE</span> for the heart failure..Don't worry contact a doctor soon..</p>
+                    </div>
+                </div> {% endif %}
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="copyright">
+                MECHINE LEARNING <strong><span> AI</span></strong> MODELS
+            </div>
+            <div class="credits">
+
+                Designed by <a href="https://bootstrapmade.com/">kavitha P</a>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .h {
+            font-family: Comic Sans Ms, Comic Sans, cursive;
+        }
+    </style>
+
+    <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+
+    <script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+    <!--<script src="{{url_for('static', filename='assets/vendor/purecounter/purecounter.js')}}"></script> -->
+    <!--<script src="{{url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script> -->
+    <script src="{{url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+
+
+</body>
+
+</html>
