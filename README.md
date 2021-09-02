@@ -1,4 +1,4 @@
-![diabeti-p](https://user-images.githubusercontent.com/51403241/131862166-a36fb460-8c3d-4e68-9690-cf336748585d.PNG)
+
 # health_AI_web_app
 machine learning classification based project.
 Goal of this project is to predict heart disease,kidney disease, liver disease and diabetes more quite accurate by using various machine learning algorithms.
