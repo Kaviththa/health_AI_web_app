@@ -11,5 +11,7 @@ Goal of this project is to predict heart disease,kidney disease, liver disease a
 ![kidney](https://user-images.githubusercontent.com/51403241/131859310-f5539b86-27e9-484a-a6d3-ab6d3853f99a.PNG)
 ![kidney-p](https://user-images.githubusercontent.com/51403241/131859580-3a4fc23b-bcd7-4293-a932-3c38b9a4b38d.PNG)
 ![liver](https://user-images.githubusercontent.com/51403241/131859673-6a54793a-051e-4ef4-875f-834b402658ec.PNG)
+![liver-n](https://user-images.githubusercontent.com/51403241/131863258-3922eb74-7cc3-42bf-b031-780c41e1ccde.PNG)
+
 ![diabeties](https://user-images.githubusercontent.com/51403241/131860438-777a9502-7dbc-4216-9fe2-26e31ff523df.PNG)
 ![diabeti-p](https://user-images.githubusercontent.com/51403241/131862166-a36fb460-8c3d-4e68-9690-cf336748585d.PNG)
